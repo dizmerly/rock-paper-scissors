@@ -35,7 +35,7 @@ function playRound(){
 
 function playGame(){
     let score = 0; 
-    for(let i = 0; i <= 5; i++){
+    for(let i = 0; i < 5; i++){
         let result = playRound()
 
         if(result == 1){
