@@ -1,0 +1,15 @@
+h1 {
+    text-align: center;
+}
+
+.selection {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.selection .btn{
+    background-color: rgba(0, 255, 255, 0.287);
+    padding: 10px;
+    width: 100px;
+}

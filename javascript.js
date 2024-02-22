@@ -34,3 +34,11 @@ function playRound(){
 }
 
 
+let playerChoice = document.querySelectorAll(".selection .btn")
+
+playerChoice.forEach((button) => {
+    button.addEventListener('click',(event) => {
+        console.log("clicked");
+    }); 
+
+}); 
