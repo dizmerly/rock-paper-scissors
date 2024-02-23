@@ -8,14 +8,23 @@ function getComputerChoice(){
     return choice[n];
 }
 
-function getPlayerChoice(playerChoice){
-    playerChoice = prompt("Rock, Paper, Scissors? \n R | P | S");
+function getPlayerChoice(selection){
+    // playerChoice = prompt("Rock, Paper, Scissors? \n R | P | S");
+    if(selection == "Rock"){
+        return "R";
+    }
+    else if(selection == "Paper"){
+        return "P";
+    }
+    else if(selection == "Scissors"){
+        return "S";
+    }
 }
 
 
 
-function playRound(){
-    pS = getPlayerChoice();
+function playRound(selection){
+    pS = getPlayerChoice(selection);
     cS = getComputerChoice();
 
     if((pS == "R" && cS == "S") || (pS == "P" && cS == "R") || (pS == "S" && cS == "P")){
@@ -38,7 +47,11 @@ let playerChoice = document.querySelectorAll(".selection .btn")
 
 playerChoice.forEach((button) => {
     button.addEventListener('click',(event) => {
-        console.log("clicked");
+        score += playRound(button.id);
+        
     }); 
-
 }); 
+
+
+let score = 0; 
+
