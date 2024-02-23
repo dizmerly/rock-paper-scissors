@@ -23,6 +23,7 @@ function getPlayerChoice(selection){
 
 
 
+
 function playRound(selection){
     pS = getPlayerChoice(selection);
     cS = getComputerChoice();
@@ -37,21 +38,42 @@ function playRound(selection){
     }
 
     else{
-        return -1;
+        return 0;
         
     }
 }
 
 
 let playerChoice = document.querySelectorAll(".selection .btn")
+let computerScore = 0;
+
+let updateScore = (scoreVal) => {
+    scoreNum.textContent = score;
+    if(score > 4){
+        scoreNum.textContent = "You win!";
+        scoreNum.setAttribute("font-size" ,"30px")
+    }
+    else if(computerScore > 4){
+        scoreNum.textContent = "Computer wins!";
+        scoreNum.setAttribute("font-size" ,"30px")
+    }
+    else if(scoreVal == 0){
+        console.log(computerScore)
+        computerScore++;
+    }
+};
+
 
 playerChoice.forEach((button) => {
     button.addEventListener('click',(event) => {
         score += playRound(button.id);
+        updateScore(score);
         
     }); 
 }); 
 
 
 let score = 0; 
+const scoreNum = document.querySelector(".score p");
+
 
